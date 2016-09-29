@@ -1,0 +1,35 @@
+<% index = -1 %>
+<% @products.each do |product| %>
+<% index = index + 1 %>
+
+      <!-- START THE FEATURETTES -->
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+
+      <% if index % 2 != 0 %>
+        <div class="col-md-7">
+      <% else %>
+        <div class="col-md-7 col-md-push-5">
+      <% end %>
+
+          <h2 class="featurette-heading"><%= product.title %>. <span class="text-muted"><%= product.price %></span></h2>
+          <p class="lead"><%= product.description %></p>
+        </div>
+
+      <% if index % 2 != 0 %>    
+        <div class="col-md-5">
+      <% else %>
+        <div class="col-md-5 col-md-pull-7">
+      <% end %>
+
+          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+        </div>
+      </div>
+
+<% end %>
+
+      <hr class="featurette-divider">
+
+      <!-- /END THE FEATURETTES -->
